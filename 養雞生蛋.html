@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快樂農夫：有機養雞產好蛋｜彰化社區大學 18週特色課程</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts 思源黑體與 Noto Serif TC 增添質感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        farm: {
+                            cream: '#FDFBF7',      // 大地米白底色
+                            sand: '#F4EFE6',       // 溫暖淺沙色
+                            green: '#2E5A36',      // 森林深綠（主色，高對比）
+                            leaf: '#4A7C59',       // 嫩葉綠
+                            sun: '#E07A26',        // 暖陽橘黃（強調色）
+                            sunlight: '#FFF3E6',   // 淡暖陽底色
+                            wood: '#5C4033',       // 木質深棕（文字與邊框）
+                            earth: '#8C6D53',      // 泥土暖棕
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 針對熟齡閱讀優化基礎字級與平滑捲動 */
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px; /* 放大基礎字體，讓 50-65 歲學員閱讀更輕鬆 */
+        }
+        
+        /* 列印友善樣式設定 */
+        @media print {
+            body {
+                background-color: #FFFFFF !important;
+                color: #000000 !important;
+                font-size: 12pt !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-shadow-none {
+                box-shadow: none !important;
+                border: 1px solid #cccccc !important;
+            }
+            table {
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            thead {
+                display: table-header-group;
+            }
+        }
+    </style>
+</head>
+<body class="bg-farm-cream text-farm-wood font-sans antialiased leading-relaxed selection:bg-farm-sun selection:text-white">
+
+    <!-- 頂部導覽與快捷操作列 (列印時隱藏) -->
+    <nav class="no-print sticky top-0 z-50 bg-farm-cream/95 backdrop-blur-sm border-b border-farm-sand shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <!-- 雞蛋小圖示 SVG -->
+                <svg class="w-8 h-8 text-farm-sun" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.5 2 5 8.5 5 14C5 18.42 8.13 22 12 22C15.87 22 19 18.42 19 14C19 8.5 15.5 2 12 2ZM10.5 17.5C8.84 17.5 7.5 16.16 7.5 14.5C7.5 13.95 7.95 13.5 8.5 13.5C9.05 13.5 9.5 13.95 9.5 14.5C9.5 15.05 9.95 15.5 10.5 15.5C11.05 15.5 11.5 15.95 11.5 16.5C11.5 17.05 11.05 17.5 10.5 17.5Z"/>
+                </svg>
+                <span class="font-bold text-farm-green text-lg tracking-wide">彰化社區大學</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="#core-info" class="hidden sm:inline-block px-3 py-2 text-farm-wood hover:text-farm-green font-medium rounded-lg transition">課程介紹</a>
+                <a href="#syllabus" class="hidden sm:inline-block px-3 py-2 text-farm-wood hover:text-farm-green font-medium rounded-lg transition">18週大綱</a>
+                <button onclick="window.print()" class="flex items-center gap-2 bg-farm-green hover:bg-farm-leaf text-white font-bold px-4 py-2 rounded-xl shadow transition cursor-pointer text-base">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                    </svg>
+                    <span>列印課表</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 頂部橫幅 (Hero Section) -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-farm-green via-[#366840] to-farm-leaf text-white py-12 sm:py-16 lg:py-20">
+        <!-- 背景裝飾田園幾何圖形 -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 800 400" fill="none">
+                <circle cx="700" cy="80" r="160" fill="#FFF3E6"/>
+                <circle cx="100" cy="350" r="200" fill="#FFF3E6"/>
+            </svg>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- 課程標籤 -->
+            <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/30 text-farm-sunlight px-4 py-1.5 rounded-full text-base sm:text-lg font-bold mb-6 shadow-sm">
+                <span>🌱 彰化社區大學</span>
+                <span>•</span>
+                <span>18週特色實作課程</span>
+            </div>
+
+            <!-- 課程主標題 -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight drop-shadow-sm">
+                快樂農夫：有機養雞產好蛋
+            </h1>
+
+            <!-- 吸睛副標與核心亮點說明 -->
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-farm-cream/95 font-medium leading-relaxed mb-8">
+                專為 50～65 歲熟齡夥伴量身打造！從零開始親近土地、友善飼養，親手拾起溫熱安心的有機好蛋，享受慢活療癒與數位共學的田園新生活。
+            </p>
+
+            <!-- 三大核心亮點徽章 -->
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
+                <div class="flex items-center gap-2 bg-farm-cream text-farm-green px-5 py-2.5 rounded-2xl font-bold shadow-md text-base sm:text-lg">
+                    <span class="text-2xl">🥚</span>
+                    <span>友善有機農法</span>
+                </div>
+                <div class="flex items-center gap-2 bg-farm-cream text-farm-green px-5 py-2.5 rounded-2xl font-bold shadow-md text-base sm:text-lg">
+                    <span class="text-2xl">📱</span>
+                    <span>熟齡資訊素養</span>
+                </div>
+                <div class="flex items-center gap-2 bg-farm-cream text-farm-green px-5 py-2.5 rounded-2xl font-bold shadow-md text-base sm:text-lg">
+                    <span class="text-2xl">💛</span>
+                    <span>社會情緒療癒</span>
+                </div>
+            </div>
+
+            <!-- 行動呼籲按鈕 (列印隱藏) -->
+            <div class="no-print flex flex-wrap justify-center gap-4">
+                <a href="#syllabus" class="bg-farm-sun hover:bg-[#c9681b] text-white font-bold text-lg px-8 py-3.5 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5">
+                    查看 18 週精彩課表 ↓
+                </a>
+                <a href="#core-info" class="bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold text-lg px-8 py-3.5 rounded-2xl transition">
+                    了解課程理念與目標
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容區塊 -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+
+        <!-- 區塊一：課程核心資訊區 (卡片式網格佈局) -->
+        <section id="core-info" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8 border-b-2 border-farm-sand pb-4">
+                <span class="bg-farm-sun text-white p-2.5 rounded-xl shadow-sm">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-farm-green">課程核心規劃</h2>
+                    <p class="text-farm-earth text-base">專為熟齡共學設計的溫暖食農課程</p>
+                </div>
+            </div>
+
+            <!-- 網格佈局：第一排 課程理念 & 課程目標 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+                <!-- 課程理念 -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-farm-sand print-shadow-none flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-farm-sunlight text-farm-sun font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                            <span>✨ 課程理念</span>
+                        </div>
+                        <p class="text-xl sm:text-2xl font-bold text-farm-wood leading-relaxed">
+                            結合有機農法、資訊判讀與情緒療癒，帶領熟齡學員打造友善雞舍，產出安心好蛋，享受自給自足的慢活樂趣。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-farm-sand flex items-center justify-between text-sm text-farm-earth font-medium">
+                        <span>招生對象：50～65歲熟齡學員</span>
+                        <span>學習時數：18週完整體驗</span>
+                    </div>
+                </div>
+
+                <!-- 課程目標 -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-farm-sand print-shadow-none">
+                    <div class="inline-flex items-center gap-2 bg-farm-green/10 text-farm-green font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                        <span>🎯 課程目標</span>
+                    </div>
+                    <p class="text-lg sm:text-xl text-farm-wood leading-loose font-medium">
+                        因應食安需求，本課程融合有機飼養、資訊判讀與情緒療癒。學員將學會友善環境養雞與辨識網路農牧假訊息，在照護生命中培養耐心與同理心。透過共學與田園實作，增進熟齡人際交流，並將優質好蛋分享給家人與彰化在地社區，共創綠色健康生活。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 網格佈局：第二排 條件限制 & 授課方式 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- 條件限制 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-farm-sand print-shadow-none">
+                    <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                        <span>📋 條件限制與學員資格</span>
+                    </div>
+                    <p class="text-lg text-farm-wood leading-relaxed">
+                        本課程為<strong class="text-farm-green font-bold">初階入門</strong>，歡迎 50 至 65 歲對有機農作、田園生活有興趣的民眾參加。無須農牧經驗，僅需具備基礎智慧型手機操作能力（如使用 LINE、上網搜尋資料）及願意親近土地、愛護動物的熱忱即可。
+                    </p>
+                </div>
+
+                <!-- 授課方式 (以標籤式呈現) -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-farm-sand print-shadow-none">
+                    <div class="inline-flex items-center gap-2 bg-emerald-100 text-farm-green font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                        <span>🤝 多元授課方式</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5 mt-2">
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">主題探討或簡報介紹</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">講師示範與實際操作</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">戶外參訪及環境關懷</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">團體互動及小組活動</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">案例討論與心得分享</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">影片欣賞及圖像教學</span>
+                        <span class="bg-farm-sand text-farm-wood font-bold px-3.5 py-2 rounded-xl text-base border border-farm-earth/20">實物觀賞及樣品教學</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 網格佈局：第三排 發展計畫 & 教學設計範例 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 發展計畫 -->
+                <div class="bg-farm-sand/70 rounded-3xl p-6 sm:p-8 border border-farm-earth/20 print-shadow-none">
+                    <div class="inline-flex items-center gap-2 bg-farm-wood text-white font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                        <span>🚀 未來發展計畫</span>
+                    </div>
+                    <p class="text-lg text-farm-wood leading-relaxed font-medium">
+                        進階班將導入智慧監控養殖與品牌行銷，串聯彰化在地小農市集，建立熟齡共好農牧社群，推動永續食農教育。
+                    </p>
+                </div>
+
+                <!-- 教學設計範例 (第4週) -->
+                <div class="bg-farm-sunlight rounded-3xl p-6 sm:p-8 border border-farm-sun/30 print-shadow-none">
+                    <div class="inline-flex items-center gap-2 bg-farm-sun text-white font-bold px-3.5 py-1 rounded-xl text-base mb-4">
+                        <span>💡 特色教學設計（第4週範例）</span>
+                    </div>
+                    <p class="text-lg text-farm-wood leading-relaxed font-medium">
+                        <strong class="text-farm-sun font-bold">第4週「天然食譜」：</strong>查證網路偏方，分組調配發酵飼料，交流餵食療癒感，落實資訊判讀與情緒共學。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：18週完整課程大綱區 -->
+        <section id="syllabus" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 border-b-2 border-farm-sand pb-4">
+                <div class="flex items-center gap-3">
+                    <span class="bg-farm-green text-white p-2.5 rounded-xl shadow-sm">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-black text-farm-green">18週完整課程大綱</h2>
+                        <p class="text-farm-earth text-base">循序漸進，從認識雞隻到收穫安心好蛋</p>
+                    </div>
+                </div>
+
+                <!-- 簡易篩選按鈕列 (列印時隱藏) -->
+                <div class="no-print flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active bg-farm-green text-white font-bold px-4 py-2 rounded-xl text-base shadow-sm transition cursor-pointer">
+                        全部週次 (18)
+                    </button>
+                    <button data-filter="practice" class="filter-btn bg-white hover:bg-farm-sand text-farm-wood border border-farm-sand font-bold px-4 py-2 rounded-xl text-base transition cursor-pointer">
+                        🌿 實作與參訪
+                    </button>
+                    <button data-filter="info" class="filter-btn bg-white hover:bg-farm-sand text-farm-wood border border-farm-sand font-bold px-4 py-2 rounded-xl text-base transition cursor-pointer">
+                        📱 資訊素養
+                    </button>
+                    <button data-filter="sel" class="filter-btn bg-white hover:bg-farm-sand text-farm-wood border border-farm-sand font-bold px-4 py-2 rounded-xl text-base transition cursor-pointer">
+                        💛 社會情緒學習
+                    </button>
+                    <button data-filter="milestone" class="filter-btn bg-white hover:bg-farm-sand text-farm-wood border border-farm-sand font-bold px-4 py-2 rounded-xl text-base transition cursor-pointer">
+                        ⭐ 重要週次
+                    </button>
+                </div>
+            </div>
+
+            <!-- 篩選狀態提示文字 (列印隱藏) -->
+            <div id="filter-status" class="no-print mb-4 text-base text-farm-earth font-medium hidden">
+                目前顯示：<span id="filter-label" class="font-bold text-farm-green">全部週次</span>（共 <span id="filter-count">18</span> 堂課）
+            </div>
+
+            <!-- 響應式課程大綱表格容器 -->
+            <div class="bg-white rounded-3xl shadow-md border border-farm-sand overflow-hidden print-shadow-none">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-farm-green text-white text-lg">
+                                <th class="py-4 px-5 font-bold w-28 sm:w-32 whitespace-nowrap">週次</th>
+                                <th class="py-4 px-5 font-bold w-1/3 min-w-[220px]">主題</th>
+                                <th class="py-4 px-5 font-bold min-w-[300px]">內容</th>
+                            </tr>
+                        </thead>
+                        <tbody id="syllabus-tbody" class="divide-y divide-farm-sand text-base sm:text-lg">
+                            <!-- 第1週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第1週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    相見歡：熟齡養雞夢與情緒療癒力
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 社會情緒學習</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    破冰建立共學默契，探討動物陪伴對50+族群的心理療癒價值（社會情緒學習），並說明18週有機養雞藍圖與安全規範。
+                                </td>
+                            </tr>
+
+                            <!-- 第2週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="info">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第2週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    打破養雞迷思：資訊素養與食安判讀
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">📱 資訊素養</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    認識台灣蛋雞產業現況，運用手機查證網路農牧謠言與假訊息（資訊素養），學會看懂雞蛋溯源標章與有機認證。
+                                </td>
+                            </tr>
+
+                            <!-- 第3週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第3週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    打造五星級友善雞舍：環境設計實務
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 實作規劃</span>
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 團隊協作</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    介紹平飼與放牧空間規劃、通風採光與防範天敵技巧；分組繪製理想生態雞舍設計圖，培養團隊溝通與協作能力。
+                                </td>
+                            </tr>
+
+                            <!-- 第4週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice info sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第4週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    雞隻營養學與天然發酵飼料製作
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 飼料實作</span>
+                                        <span class="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">📱 資訊素養</span>
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 社會情緒學習</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    講師示範利用彰化在地農副產品調配無藥殘天然飼料，學員實作發酵飼料，並交流照護生命的耐心與喜悅。
+                                </td>
+                            </tr>
+
+                            <!-- 第5週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第5週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    認識蛋雞品種與雛雞挑選秘訣
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 實物觀察</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    實物與圖像介紹常見蛋雞品種特性，學習觀察雞隻健康指標，小組討論適合自家或社區空間的飼養規模與品種選擇。
+                                </td>
+                            </tr>
+
+                            <!-- 第6週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第6週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    戶外參訪：彰化在地有機牧場見學
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🚌 戶外參訪</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    實地走訪彰化友善蛋雞農場，觀摩生態循環系統與自動化設備，與青農面對面交流，激發對土地的環境關懷。
+                                </td>
+                            </tr>
+
+                            <!-- 第7週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第7週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    雞隻行為密碼與情緒陪伴觀察
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 社會情緒學習</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    解讀雞隻叫聲與肢體語言，學習透過觀察雞群互動覺察自我情緒壓力（社會情緒學習），建立人與動物的信任關係。
+                                </td>
+                            </tr>
+
+                            <!-- 第8週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第8週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    生態循環：發酵床墊料與雞糞堆肥
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 堆肥實作</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    實作無臭味微生物發酵床技術，將雞糞轉化為有機肥，達成零廢棄循環農業，體驗化腐朽為神奇的成就感。
+                                </td>
+                            </tr>
+
+                            <!-- 第9週：公民素養週 (醒目標示) -->
+                            <tr class="syllabus-row bg-amber-50/90 border-y-2 border-amber-300" data-tags="milestone">
+                                <td class="py-4 px-5 font-black text-amber-800 whitespace-nowrap align-top">第9週</td>
+                                <td class="py-4 px-5 font-black text-amber-900 align-top">
+                                    <div class="flex items-center gap-2">
+                                        <span>🏛️ 公民素養週</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 font-bold text-amber-900 leading-relaxed align-top">
+                                    由彰化社區大學安排
+                                </td>
+                            </tr>
+
+                            <!-- 第10週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice info">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第10週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    天然草本保健與常見疾病預防
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 草本保健</span>
+                                        <span class="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">📱 資訊素養</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    拒絕抗生素！認識大蒜、艾草等天然香草保健法；運用數位工具查詢正確禽病防疫資訊（資訊素養），破除錯誤用藥偏方。
+                                </td>
+                            </tr>
+
+                            <!-- 第11週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第11週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    產蛋期照護與高品質雞蛋秘密
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 同儕支持</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    掌握光照、溫度與鈣質補充對蛋殼品質的影響，小組分享日常照護突發狀況與解決之道，強化彼此支持系統。
+                                </td>
+                            </tr>
+
+                            <!-- 第12週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="info">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第12週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    數位農夫：手機記錄與雲端生長日誌
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">📱 資訊素養</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    學習使用手機拍照、錄影及LINE記事本建立雞群健康日誌（資訊素養），透過數據追蹤產蛋率，提升數位生活自信。
+                                </td>
+                            </tr>
+
+                            <!-- 第13週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第13週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    鮮蛋分級、清潔與保鮮黃金法則
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 實物教學</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    實物教學如何判別新鮮雞蛋（氣室、蛋黃挺度），示範正確乾擦清潔與冷藏保存法，確保每一顆好蛋的安全衛生。
+                                </td>
+                            </tr>
+
+                            <!-- 第14週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第14週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    好蛋上桌：創意健康料理與營養學
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🍳 料理實作</span>
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 共食情誼</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    針對熟齡族營養需求，設計低油少鹽的有機蛋料理，分組烹調並共食分享，在餐桌對話中增進同儕情誼與幸福感。
+                                </td>
+                            </tr>
+
+                            <!-- 第15週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第15週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    友善環境與社區共好：食農推廣設計
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 社會情緒學習</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    思考如何將有機養雞經驗帶入家庭與鄰里，分組企劃社區食農體驗活動，學習傾聽他人意見與整合團隊創意。
+                                </td>
+                            </tr>
+
+                            <!-- 第16週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="info">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第16週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    農產品故事行銷與社群分享技巧
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-sky-100 text-sky-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">📱 資訊素養</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    運用手機修圖與簡短文案（資訊素養），為自家產出的好蛋撰寫溫暖的品牌故事，自信向親友推廣有機理念。
+                                </td>
+                            </tr>
+
+                            <!-- 第17週 -->
+                            <tr class="syllabus-row hover:bg-farm-cream/80 transition" data-tags="practice sel">
+                                <td class="py-4 px-5 font-black text-farm-green whitespace-nowrap align-top">第17週</td>
+                                <td class="py-4 px-5 font-bold text-farm-wood align-top">
+                                    成果展籌備：海報設計與心路歷程回顧
+                                    <div class="mt-1.5 flex flex-wrap gap-1.5">
+                                        <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-0.5 rounded-lg">💛 社會情緒學習</span>
+                                        <span class="inline-block bg-emerald-100 text-farm-green text-xs font-bold px-2.5 py-0.5 rounded-lg">🌿 策展實作</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 text-farm-wood/90 leading-relaxed align-top">
+                                    回顧17週養雞點滴與自我成長（社會情緒學習），各組分工製作靜態展示海報與鮮蛋禮盒包裝，演練上台分享。
+                                </td>
+                            </tr>
+
+                            <!-- 第18週：成果展 (醒目標示) -->
+                            <tr class="syllabus-row bg-farm-sunlight border-t-2 border-farm-sun" data-tags="milestone sel">
+                                <td class="py-4 px-5 font-black text-farm-sun whitespace-nowrap align-top">第18週</td>
+                                <td class="py-4 px-5 font-black text-farm-wood align-top">
+                                    <div class="flex items-center gap-1.5 text-farm-sun">
+                                        <span>🎉 成果展：「金蛋銀蛋」友善農牧嘉年華</span>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-5 font-medium text-farm-wood leading-relaxed align-top">
+                                    學員上台展現學習成果、分享有機鮮蛋與心得故事，邀請家人及社大師生品嚐交流，頒發結業證書與最佳飼主獎。
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾與友善列印功能 -->
+    <footer class="bg-farm-wood text-farm-cream py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-farm-cream/20">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <span class="text-2xl">🐔</span>
+                        <h3 class="text-2xl font-black text-white">快樂農夫：有機養雞產好蛋</h3>
+                    </div>
+                    <p class="text-farm-cream/80 text-base">
+                        彰化社區大學 18週特色課程｜專為 50～65 歲熟齡學員設計
+                    </p>
+                </div>
+
+                <!-- 頁尾列印與回到頂部按鈕 (列印隱藏) -->
+                <div class="no-print flex flex-wrap justify-center gap-3">
+                    <button onclick="window.print()" class="flex items-center gap-2 bg-farm-sun hover:bg-[#c9681b] text-white font-bold px-6 py-3 rounded-2xl shadow-md transition cursor-pointer text-base">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                        </svg>
+                        <span>列印課程表 / 轉存 PDF</span>
+                    </button>
+                    <a href="#" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white font-bold px-5 py-3 rounded-2xl transition text-base">
+                        <span>回到頂部 ↑</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 text-center text-sm text-farm-cream/70 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>歡迎熱愛土地與健康飲食的您加入我們，一起體驗友善農牧的單純快樂！</p>
+                <p>彰化社區大學 • 終身學習與食農教育推廣</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 互動篩選邏輯腳本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const syllabusRows = document.querySelectorAll('.syllabus-row');
+            const filterStatus = document.getElementById('filter-status');
+            const filterLabel = document.getElementById('filter-label');
+            const filterCount = document.getElementById('filter-count');
+
+            const labelMap = {
+                'all': '全部週次',
+                'practice': '🌿 實作與參訪',
+                'info': '📱 資訊素養',
+                'sel': '💛 社會情緒學習',
+                'milestone': '⭐ 重要週次（公民素養週與成果展）'
+            };
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const selectedFilter = btn.getAttribute('data-filter');
+
+                    // 更新按鈕樣式
+                    filterButtons.forEach(b => {
+                        b.classList.remove('bg-farm-green', 'text-white', 'shadow-sm');
+                        b.classList.add('bg-white', 'text-farm-wood', 'border', 'border-farm-sand');
+                    });
+                    btn.classList.remove('bg-white', 'text-farm-wood', 'border', 'border-farm-sand');
+                    btn.classList.add('bg-farm-green', 'text-white', 'shadow-sm');
+
+                    // 篩選表格列
+                    let visibleCount = 0;
+                    syllabusRows.forEach(row => {
+                        const rowTags = row.getAttribute('data-tags') || '';
+                        if (selectedFilter === 'all' || rowTags.includes(selectedFilter)) {
+                            row.style.display = '';
+                            visibleCount++;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    // 更新狀態提示列
+                    if (selectedFilter === 'all') {
+                        filterStatus.classList.add('hidden');
+                    } else {
+                        filterStatus.classList.remove('hidden');
+                        filterLabel.textContent = labelMap[selectedFilter];
+                        filterCount.textContent = visibleCount;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
